@@ -1,0 +1,48 @@
+// variabel
+$bgcolor: lightblue;
+$textcolor: darkblue;
+$fontsize: 18px;
+$ulcolor: yellow;
+
+// mixin
+@mixin font-li {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-style: italic;
+}
+
+// implementasi variabel
+body {
+    background-color: $bgcolor;
+    color: $textcolor;
+    font-size: $fontsize;
+}
+
+// nesting
+ul {
+    li {
+        color: $ulcolor;
+        h1 {
+            @include font-li();
+        }
+    }
+}
+
+// extends
+.meal-box {
+  color: #333;
+  border: 1px solid #bbb;
+  box-shadow: 1px 1px 0 #ddd;
+  margin: 0 0 10px;
+  padding: 15px;
+}
+
+.last-name{
+    @extend .meal-box;
+    background-color: yellow;
+}
+
+.maiden-name{
+    @extend .meal-box;
+    background-color: orange;
+}
